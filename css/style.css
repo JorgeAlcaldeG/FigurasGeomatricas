@@ -1,0 +1,25 @@
+#container{
+    margin-top: 3%;
+    padding-top: 1%;
+    width: 50%;
+    /* border-style:solid; */
+    height: 80vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: beige;
+    border-radius: 15px;
+}
+.centerText{
+    text-align: center;
+}
+#figura{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    font-size: 18px;
+}
+div >*{
+text-align: center;
+}
