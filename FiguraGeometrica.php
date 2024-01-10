@@ -2,7 +2,7 @@
     abstract class figuraGeometrica{
         protected string $tipoFigura;
         protected int $lado1;
-        function __construct(string $tipo, int $lado){
+        function __construct(string $tipo, float $lado){
             $this->tipo = $tipo;
             $this->lado1 = $lado;
         }
@@ -12,10 +12,10 @@
         function getTipo():string{
             return $this->tipo;
         }
-        function setlado(int $lado){
+        function setlado(float $lado){
             $this->lado1 = $lado;
         }
-        function getlado():string{
+        function getlado():float{
             return $this->lado1;
         }
         abstract protected function area();
