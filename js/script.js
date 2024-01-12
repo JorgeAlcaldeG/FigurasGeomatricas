@@ -3,17 +3,39 @@ var form = document.getElementById("form");
 selectorFig.addEventListener("change",()=>{cargarFigura()});
 
 function cargarFigura(){
-    var formdata = new FormData();
-    formdata.append('figura', selectorFig.value);
-    var ajax = new XMLHttpRequest();
-    ajax.open('POST', './proc/infoForm.php');
-    ajax.onload=function(){
-        if (ajax.status == 200) {
-            res.innerHTML = "";
-            form.innerHTML = ajax.responseText;
+    console.log(selectorFig.value);
+    if(selectorFig.value !="" || selectorFig.value !="null" ||selectorFig.value !=0){
+        console.log(selectorFig.value);
+        var formdata = new FormData();
+        formdata.append('figura', selectorFig.value);
+        var ajax = new XMLHttpRequest();
+        ajax.open('POST', './proc/infoForm.php');
+        ajax.onload=function(){
+            if (ajax.status == 200) {
+                res.innerHTML = "";
+                form.innerHTML = ajax.responseText;
+                var tipo = document.getElementById("tipo").value
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 1200,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "info",
+                    title: "Cambiando a "+tipo
+                  });
+            }
         }
+        ajax.send(formdata);
+    }else{
+        document.getElementById("res").innerHTML="";
     }
-    ajax.send(formdata);
 }
 
 function calculardatos(){
@@ -38,7 +60,40 @@ function calculardatos(){
     ajax.open('POST', './proc/resForm.php');
     ajax.onload=function(){
         if (ajax.status == 200) {
-            res.innerHTML = ajax.responseText;
+            if(ajax.responseText != "error"){
+                res.innerHTML = ajax.responseText;
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 1200,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "success",
+                    title: "Mostrando resultados"
+                  });
+            }else{
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 1200,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
+                    icon: "error",
+                    title: "Revisa los datos introducidos"
+                  });
+            }
         }
     }
     ajax.send(formdata);
