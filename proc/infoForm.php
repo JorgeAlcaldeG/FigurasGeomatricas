@@ -6,7 +6,8 @@ switch ($idFigura) {
         $figuraNom = "Triangulo";
         $form .='<input type="hidden" id="tipo" value="'.$figuraNom.'">
         <input type="number" id="lado1" placeholder="Lado 1">
-        <input type="number" id="lado2" placeholder="Lado 2">';
+        <input type="number" id="lado2" placeholder="Lado 2">
+        <input type="number" id="lado3" placeholder="Lado 3">';
         break;
     case '2':
         $figuraNom = "Circulo";

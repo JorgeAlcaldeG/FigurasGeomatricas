@@ -28,6 +28,12 @@ function calculardatos(){
         var lado2 = document.getElementById("lado2");
         formdata.append('lado2', lado2.value);
     }
+    if(document.getElementsByTagName("form")[0].childElementCount == 5){
+        var lado2 = document.getElementById("lado2");
+        formdata.append('lado2', lado2.value);
+        var lado2 = document.getElementById("lado3");
+        formdata.append('lado3', lado3.value);
+    }
     var ajax = new XMLHttpRequest();
     ajax.open('POST', './proc/resForm.php');
     ajax.onload=function(){
