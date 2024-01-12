@@ -10,9 +10,9 @@ class rectangulo extends figuraGeometrica implements perimetroM{
         return $this->lado2;
     }
     function perimetro():float{
-        return "hola";
+        return 2*($this->getlado()+$this->getlado2());
     }
     function area():float{
-        return $lado * $lado2;
+        return $this->getlado()*$this->getlado2();
     }
 }
