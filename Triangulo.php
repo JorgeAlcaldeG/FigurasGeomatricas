@@ -21,7 +21,7 @@ class triangulo extends figuraGeometrica implements perimetroM{
     }
     function area():float{
         $s = ($this->getlado()+$this->getlado2()+$this->getlado3())/2;
-
+        return $s;
         return sqrt($s*($s-$this->getlado())*($s-$this->getlado2())*($s-$this->getlado3()));
         // return $s;
         // return $s*($s-$this->getlado())*($s-$this->getlado2())*($s-$this->getlado3());  
