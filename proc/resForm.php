@@ -32,9 +32,9 @@ if(!$error){
         }
     }
     if(!$error){
-        echo "Area: ".$figura->area();
-        echo "</br>";
-        echo "Perimetro: ".$figura->perimetro();
+        echo "<p class='resu'><strong>Area:</strong> ".round($figura->area(), 2)."</p>";
+        // echo "</br>";
+        echo "<p class='resu'><strong>Perimetro:</strong> ".round($figura->perimetro(), 1)."</p>";
     }else{
         echo "error";
     }

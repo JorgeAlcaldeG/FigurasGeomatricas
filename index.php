@@ -6,10 +6,14 @@
     <title>Figuras geometricas</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,100;1,400&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="container">
-        <h1 class="centerText">🔥🔥Elige una figura geometrica🔥🔥</h1>
+        <h1 class="centerText">Elige una figura geométrica</h1>
         <br>
         <select name="figura" id="figura">
             <option value="0">Elige una opción</option>
